@@ -1,0 +1,17 @@
+<p>Find me in app/views/books/add.html.erb</p>
+
+<h2>Recent book: <%= @book_name %></h2>
+<%= form_tag :action => 'add' do %>
+<p>Book name: <%= text_field_tag 'book_name', @book_name %></p>
+<%= submit_tag 'Add Book' %>
+<% end %>
+
+<p>Book list:</p>
+<ul>
+<% @books.each do |book| %>
+<li><%= book.book_name %></li>
+<% end %>
+</ul>
+<hr>
+<%= debug(params) %>
+<%= debug(assigns) %>
